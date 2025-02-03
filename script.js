@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   
-  const video2 = document.getElementById("video1");
+  const video2 = document.getElementById("video2");
   const tracks2 = video2.textTracks;
   
   // Show the first track (if available) by default

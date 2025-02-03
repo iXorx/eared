@@ -5,12 +5,21 @@
   <meta charset="UTF-8">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, Verdana, sans-serif;
       margin: 0;
-      padding: 32px;
-      background-color: #ccc;
-      color: #000;
+      padding: 0;
+      background-color: #0a0423;
+      color: #fff;
     }
+    
+    h1 {
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      word-wrap: balance;
+      font-size: 2em;
+      padding: 32px;
+    }
+    
     button {
       background-color: #f8f8f8;
       border: 1px solid #000;
@@ -21,12 +30,20 @@
       padding: 5px 10px;
       display: block;
     }
+    
     section {
+      color: #000;
       background-color: #fff;
       border-radius: 5px;
-      margin: 0 auto 20px;
-      padding: 20px;
-      width: 480px;
+      margin: 0 auto 32px;
+      padding: 8px 16px;
+      width: 90dvw;
+      box-sizing: border-box;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
     }
   </style>
 </head>
@@ -40,7 +57,7 @@
       <source type="video/mp4" src="https://raw.githubusercontent.com/iXorx/me/refs/heads/main/public/video/cv.mp4"/>
       <track kind="subtitles" src="./sub.vtt" srclang="es" label="Español" default/>
     </video>
-    <button id="toggleSubsBtn1">CC</button>
+    <button id="toggleSubsBtn1">Añadir/quitar subtítulos</button>
   </section>
 
   <section aria-describedby="aud">
@@ -49,7 +66,7 @@
       <source type="video/mp4" src="https://raw.githubusercontent.com/iXorx/me/refs/heads/main/public/video/audiodesc.mp4"/>
       <track kind="subtitles" src="./sub.vtt" srclang="es" label="Español" default/>
     </video>
-    <button id="toggleSubsBtn2">CC</button>
+    <button id="toggleSubsBtn2">Añadir/quitar subtítulos</button>
   </section>
 
   <script src="../script.js"></script>
