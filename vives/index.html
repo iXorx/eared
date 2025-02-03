@@ -1,0 +1,124 @@
+<!DOCTYPE html UTF-8>
+<html lang="en">
+<head>
+  <title>ID #04 - Tarea 2 - Elisenda Vives</title>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: Arial, Helvetica, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0a0423;
+      color: #fff;
+    }
+    
+    h1 {
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      word-wrap: balance;
+      font-size: 2em;
+      padding: 32px;
+    }
+    
+    button {
+      background-color: #f8f8f8;
+      border: 1px solid #000;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      margin: 10px 0;
+      padding: 5px 10px;
+      display: block;
+    }
+    
+    section {
+      color: #000;
+      background-color: #fff;
+      border-radius: 5px;
+      margin: 0 auto 32px;
+      padding: 8px 16px;
+      width: 90dvw;
+      box-sizing: border-box;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>
+    ID #04 - Tarea 2 - Elisenda Vives
+  </h1>
+  <section aria-describedby="no-aud">
+    <h2 id="no-aud">Video <strong>sin</strong> audiodescripción</h2>
+    <video id="video1" preload="auto" width="480" height="360" poster="POSTER_URL" playsinline controls>
+      <source type="video/mp4" src="./Video.mp4"/>
+      <track kind="subtitles" src="./ES-Captions.vtt" srclang="es" label="Español" default/>
+    </video>
+    <button id="toggleSubsBtn1">Añadir/quitar subtítulos</button>
+  </section>
+
+  <section aria-describedby="aud">
+    <h2 id="aud">Video <strong>con</strong> audiodescripción</h2>
+    <video id="video2" preload="auto" width="480" height="360" poster="POSTER_URL" playsinline controls>
+      <source type="video/mp4" src="./Video-AD.mp4"/>
+      <track kind="subtitles" src="./ES-Captions.vtt" srclang="es" label="Español" default/>
+    </video>
+    <button id="toggleSubsBtn2">Añadir/quitar subtítulos</button>
+  </section>
+  
+
+  <section aria-describedby="entregables">
+    <h2 id="entregables">Entregrables</h2>
+    <ul aria-describedby="entregables">
+      <li>
+        <a href="./Video.mp4">Vídeo sin audiodescripción</a>
+      </li>
+      <li>
+        <a href="./Video-AD.mp4">Vídeo con audiodescripción</a>
+      </li>
+      <li>
+        <a href="./ES-Captions.vtt">Subtítulos</a>
+      </li>
+    </ul>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const video = document.getElementById("video1");
+  const tracks = video.textTracks;
+  
+  // Show the first track (if available) by default
+  if (tracks[0]) {
+    tracks[0].mode = "showing";
+  }
+  
+  // Toggle subtitles when button is clicked
+  const toggleBtn = document.getElementById("toggleSubsBtn1");
+  toggleBtn.addEventListener("click", () => {
+    for (let i = 0; i < tracks.length; i++) {
+      tracks[i].mode = tracks[i].mode === "showing" ? "hidden" : "showing";
+    }
+  });
+  
+  const video2 = document.getElementById("video2");
+  const tracks2 = video2.textTracks;
+  
+  // Show the first track (if available) by default
+  if (tracks2[0]) {
+    tracks2[0].mode = "showing";
+  }
+  
+  // Toggle subtitles when button is clicked
+  const toggleBtn2 = document.getElementById("toggleSubsBtn2");
+  toggleBtn2.addEventListener("click", () => {
+    for (let i = 0; i < tracks2.length; i++) {
+      tracks2[i].mode = tracks2[i].mode === "showing" ? "hidden" : "showing";
+    }
+  });
+});
+  </script>
+</body>
+</html>
